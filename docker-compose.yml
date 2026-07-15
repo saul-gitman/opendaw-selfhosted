@@ -1,0 +1,15 @@
+services:
+  opendaw:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: opendaw-selfhosted:local
+    ports:
+      - "${OPENDAW_BIND:-127.0.0.1}:${OPENDAW_PORT:-8080}:8080"
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /var/cache/nginx
+      - /var/run
+    security_opt:
+      - no-new-privileges:true

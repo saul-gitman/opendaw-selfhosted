@@ -15,6 +15,17 @@ a strong focus on **education** and data-privacy.
 
 Subscribe to our [Newsletter](https://buttondown.com/opendaw) for regular updates.
 
+## Self-hosted Docker edition
+
+This fork adds a production-oriented Docker deployment for the openDAW Studio web application:
+
+- multi-stage Node/Rust/WASM build with a small Nginx runtime image
+- cross-origin isolation headers required by browser audio worklets
+- health checks, read-only runtime filesystem, and conservative loopback binding
+- Docker Compose configuration and a GitHub Actions build verification workflow
+
+See the [Docker self-hosting guide](docs/SELF_HOSTING_DOCKER.md) for build, deployment, verification, and rollback instructions. The openDAW application remains the work of its upstream maintainers; this fork's contribution is the containerization and deployment workflow.
+
 <p align="center">
 <img src="https://raw.githubusercontent.com/andremichelle/openDAW/main/assets/studio-teaser.png"/>
 </p>
